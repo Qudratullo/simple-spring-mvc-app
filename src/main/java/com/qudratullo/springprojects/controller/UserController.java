@@ -1,5 +1,6 @@
 package com.qudratullo.springprojects.controller;
 
+import com.qudratullo.springprojects.model.dto.GetUsersResponse;
 import com.qudratullo.springprojects.model.dto.UserRequest;
 import com.qudratullo.springprojects.model.dto.UserResponse;
 import com.qudratullo.springprojects.service.UserService;
@@ -17,8 +18,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("create")
+    @PutMapping("create")
     public UserResponse create(@RequestBody UserRequest request) {
         return userService.createUser(request);
+    }
+
+    @GetMapping("all")
+    public GetUsersResponse getAllUsers() {
+        return userService.getAllUsers();
     }
 }

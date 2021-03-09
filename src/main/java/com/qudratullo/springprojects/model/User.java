@@ -1,8 +1,9 @@
 package com.qudratullo.springprojects.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
 
     private Long id;
     private String username;
